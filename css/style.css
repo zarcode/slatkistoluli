@@ -1231,7 +1231,7 @@ fieldset legend {
 .row > [class*="column-"], .columns_wrap > [class*="column-"] {
 
   /* Old way: floating columns */
-  /* float: left;*/
+  float: left;
 
   /* New way: inline blocks */
   /* Warning: remove spaces between columns tags:
