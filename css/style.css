@@ -8127,7 +8127,7 @@ margin-top: 30px !important;
 }
 /* HOMEWIDTH */
 .sc_home-bg-type-a {
-    background-image: url(../images/bg_green.jpg) !important;
+	background-image: url('../images/bg_menu.jpg') !important;
 }
 .sc_home-bg-type-b {
     background-image: url(../images/bg1-1.jpg) !important;
