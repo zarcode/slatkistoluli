@@ -62,3 +62,103 @@
 
 }
 
+/* Product price and description styles */
+.woocommerce .product-price-large {
+	font-size: 2em !important;
+	font-weight: 700;
+	margin-bottom: 1.5em !important;
+	line-height: 1.2em;
+}
+
+.woocommerce .product-price-large .woocommerce-Price-amount {
+	font-size: 1em;
+}
+
+.woocommerce .product-price-large .woocommerce-Price-currencySymbol {
+	font-weight: 300;
+}
+
+.woocommerce .product-description {
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+.woocommerce .product-description p {
+	font-size: 1.1em;
+	line-height: 1.8em;
+	margin-bottom: 0;
+}
+
+/* Image popup/modal styles for mobile */
+.mfp-no-margins img.mfp-img {
+	padding: 0;
+}
+
+.mfp-no-margins .mfp-figure:after {
+	top: 0;
+	bottom: 0;
+}
+
+.mfp-no-margins .mfp-container {
+	padding: 0;
+}
+
+/* Close button styling */
+.mfp-close {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	width: 44px;
+	height: 44px;
+	line-height: 44px;
+	text-align: center;
+	font-size: 28px;
+	color: #fff !important;
+	background-color: rgba(0, 0, 0, 0.5);
+	border-radius: 50%;
+	cursor: pointer;
+	z-index: 9999;
+	opacity: 1;
+	transition: all 0.3s ease;
+}
+
+.mfp-close:hover {
+	background-color: rgba(0, 0, 0, 0.8);
+	transform: scale(1.1);
+}
+
+.mfp-close:active {
+	transform: scale(0.95);
+}
+
+/* Mobile optimizations for image popup */
+@media (max-width: 768px) {
+	.mfp-container {
+		padding: 10px;
+	}
+	
+	.mfp-figure {
+		margin: 0;
+	}
+	
+	.mfp-close {
+		right: 15px;
+		top: 15px;
+		width: 50px;
+		height: 50px;
+		line-height: 50px;
+		font-size: 32px;
+		background-color: rgba(0, 0, 0, 0.7);
+	}
+	
+	/* Hide navigation arrows on mobile - use swipe gestures instead */
+	.mfp-arrow {
+		display: none !important;
+	}
+	
+	.mfp-arrow-left,
+	.mfp-arrow-right {
+		display: none !important;
+	}
+}
+

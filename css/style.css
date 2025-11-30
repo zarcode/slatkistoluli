@@ -6268,7 +6268,7 @@ footer.twitter_wrap .sc_section_overlay {
 
 /* Widget: Flowers Boutique Logo and Socials */
 .widget_area .widget_socials .sc_socials {
-	margin-top: 4.5em;
+	/* margin-top: 4.5em; */
 	margin-right: 0;
 	margin-left: 5px;
 }
