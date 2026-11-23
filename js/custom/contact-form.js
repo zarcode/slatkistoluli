@@ -1,7 +1,8 @@
 // Contact form -> Web3Forms (no PHP needed). Applies to every form.contact-form-js
 (function () {
-  var ACCESS_KEY = '4d153229-7b9a-450d-9bfa-3fb3294c723f';
+  var ACCESS_KEY = '04440260-606a-4945-b3bd-0cb89a5126e7';
   var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  var PHONE_RE = /^\+?[\d\s\/().-]{6,}$/;
 
   function show(result, type, html) {
     result.className = 'result sc_infobox sc_infobox_style_' + type;
@@ -20,6 +21,12 @@
     var field = function (n) { return form.querySelector('[name="' + n + '"]'); };
     var name = field('username').value.trim();
     var email = field('email').value.trim();
+    var phoneField = field('phone');
+    var phone = phoneField ? phoneField.value.trim() : '';
+    var locationField = field('location');
+    var location = locationField ? locationField.value.trim() : '';
+    var dateField = field('event_date');
+    var eventDate = dateField ? dateField.value.trim() : '';
     var message = field('message').value.trim();
     var errors = [];
 
@@ -29,6 +36,12 @@
     if (!name) { errors.push('Ime je obavezno'); field('username').classList.add('error_fields_class'); }
     if (!email) { errors.push('E-mail je obavezan'); field('email').classList.add('error_fields_class'); }
     else if (!EMAIL_RE.test(email)) { errors.push('E-mail adresa nije validna'); field('email').classList.add('error_fields_class'); }
+    if (phoneField) {
+      if (!phone) { errors.push('Broj telefona je obavezan'); phoneField.classList.add('error_fields_class'); }
+      else if (!PHONE_RE.test(phone)) { errors.push('Broj telefona nije validan'); phoneField.classList.add('error_fields_class'); }
+    }
+    if (locationField && !location) { errors.push('Mesto održavanja je obavezno'); locationField.classList.add('error_fields_class'); }
+    if (dateField && !eventDate) { errors.push('Datum proslave je obavezan'); dateField.classList.add('error_fields_class'); }
     if (!message) { errors.push('Poruka je obavezna'); field('message').classList.add('error_fields_class'); }
     if (errors.length) { show(result, 'error', errors.join('<br>')); return; }
 
@@ -45,6 +58,9 @@
         from_name: name,
         name: name,
         email: email,
+        phone: phone,
+        mesto_odrzavanja: location,
+        datum_proslave: eventDate,
         message: message
       })
     })

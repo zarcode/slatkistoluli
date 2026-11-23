@@ -330,6 +330,7 @@ input::-moz-focus-inner {
 textarea,
 select,
 input[type="tel"],
+input[type="date"],
 input[type="text"],
 input[type="number"],
 input[type="email"],
@@ -364,6 +365,7 @@ input::-moz-focus-inner {			/* Corrects inner padding and border displayed oddly
 }
 input[type="text"],
 input[type="tel"],
+input[type="date"],
 input[type="number"],
 input[type="email"],
 input[type="password"],
@@ -8319,4 +8321,23 @@ margin-top: 30px !important;
 .sc_home-box-googlemap-param {
     width:100%  !important;
     height:480px  !important;
+}
+
+/* Date field in contact forms: match the other text inputs */
+input[type="date"] {
+	width: 100%;
+	font-family: inherit;
+	-webkit-appearance: none;
+	appearance: none;
+}
+input[type="date"]::-webkit-date-and-time-value {
+	text-align: left;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+	cursor: pointer;
+	opacity: 0.6;
+}
+
+a[href^="tel:"] {
+	color: inherit;
 }

@@ -108,7 +108,7 @@
 
                     <span class="contact_us">Kontakt</span>
                     <span class="contact_label contact_phone"
-                      >064/537-90-81</span
+                      ><a href="tel:+381645379081">064/537-90-81</a></span
                     >
                   </div>
 
@@ -162,7 +162,7 @@
                       <a href="akcije.html"><span>Akcije</span></a>
                     </li>
                     <li class="menu-item">
-                      <a href="contacts.html"><span>O nama</span></a>
+                      <a href="onama.html"><span>O nama</span></a>
                     </li>
                   </ul>
                 </nav>
@@ -388,7 +388,7 @@
                     </ul>
                   </li>
                   <li class="menu-item current-menu-item current-menu-ancestor">
-                    <a href="contacts.html"><span>Kontakt</span></a>
+                    <a href="onama.html"><span>Kontakt</span></a>
                   </li>
                 </ul>
               </nav>
@@ -396,10 +396,10 @@
             <div class="panel_middle">
               <div class="contact_field contact_phone">
                 <span class="contact_icon icon-phone"></span>
-                <span class="contact_label contact_phone">064/537-90-81</span>
+                <span class="contact_label contact_phone"><a href="tel:+381645379081">064/537-90-81</a></span>
                 <span class="contact_icon icon-mail"></span>
                 <span class="contact_label contact_email"
-                  >milosmilenkovic89@gmail.com</span
+                  >slatkistoluli@gmail.com</span
                 >
               </div>
             </div>
@@ -427,34 +427,18 @@
             <article class="post_item_single page type-page">
               <!-- .post_content -->
               <div class="post_content">
-                <!-- <section class="no-col-padding">
-                  <div class="container-fluid">
-                    <div class="columns_wrap">
-                      <div class="column_container column-1_1">
-                        <div class="column-inner">
-                          <div class="m_wrapper">
-                            <div
-                              id="sc_googlemap_1_wrap"
-                              class="sc_googlemap sc-googlemap-param"
-                              data-zoom="14"
-                              data-style="simple"
-                            >
-                              <div
-                                id="sc_googlemap_1_1"
-                                class="sc_googlemap_marker"
-                                data-title=""
-                                data-description="Los Angeles"
-                                data-address="Los Angeles"
-                                data-latlng=""
-                                data-point="images/location.png"
-                              ></div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </section> -->
+                <section class="no-col-padding">
+                  <iframe
+                    title="Slatki Sto Luli - Mije Alekića 14, Leskovac"
+                    src="https://maps.google.com/maps?q=42.9918762,21.9688575&hl=sr&z=18&output=embed"
+                    width="100%"
+                    height="450"
+                    style="border: 0; display: block"
+                    loading="lazy"
+                    allowfullscreen
+                    referrerpolicy="no-referrer-when-downgrade"
+                  ></iframe>
+                </section>
                 <section class="no-col-padding">
                   <div class="content_wrap">
                     <div class="columns_wrap">
@@ -490,7 +474,9 @@
                                           >
                                             <div class="m_wrapper">
                                               <p>
-                                                Leskovac
+                                                <b>
+                                                Mije Alekića 14, Leskovac (Kumalak naselje)
+                                                </b>
                                               </p>
                                             </div>
                                           </div>
@@ -513,7 +499,7 @@
                                             class="m_text_column m_content_element"
                                           >
                                             <div class="m_wrapper">
-                                              <p>064/537-90-81</p>
+                                              <p><b><a style="color: rgb(66, 68, 67)" href="tel:+381645379081">064/537-90-81</a></b></p>
                                             </div>
                                           </div>
                                           <div
@@ -535,7 +521,7 @@
                                             class="m_text_column m_content_element"
                                           >
                                             <div class="m_wrapper">
-                                              <p>milosmilenkovic89@gmail.com</p>
+                                              <p><b><a style="color: rgb(66, 68, 67)"href="mailto:slatkistoluli@gmail.com">slatkistoluli@gmail.com</a></b></p>
                                             </div>
                                           </div>
                                           <div
@@ -603,18 +589,54 @@
                                       />
                                     </div>
                                     <div
+                                      class="sc_form_item sc_form_field label_over column-1_1"
+                                    >
+                                      <input
+                                        id="sc_form_phone"
+                                        type="tel"
+                                        name="phone"
+                                        placeholder="Broj telefona *"
+                                        aria-required="true"
+                                      />
+                                    </div>
+                                    <div
+                                      class="sc_form_item sc_form_field label_over column-1_2"
+                                    >
+                                      <input
+                                        id="sc_form_location"
+                                        type="text"
+                                        name="location"
+                                        placeholder="Mesto održavanja *"
+                                        aria-required="true"
+                                      />
+                                    </div>
+                                    <div
+                                      class="sc_form_item sc_form_field label_over column-1_2"
+                                    >
+                                      <input
+                                        id="sc_form_date"
+                                        type="text"
+                                        name="event_date"
+                                        placeholder="Datum proslave *"
+                                        aria-required="true"
+                                        autocomplete="off"
+                                        onfocus="this.type='date';this.min=new Date().toISOString().slice(0,10);"
+                                        onblur="if(!this.value)this.type='text';"
+                                      />
+                                    </div>
+                                    <div
                                       class="sc_form_item sc_form_message column-1_1"
                                     >
                                       <textarea
                                         id="sc_form_message"
                                         name="message"
-                                        placeholder="Poruka"
+                                        placeholder="Poruka *"
                                         aria-required="true"
                                       ></textarea>
                                     </div>
                                   </div>
                                   <div class="sc_form_item sc_form_button">
-                                    <button>Send Message</button>
+                                    <button>Pošalji</button>
                                   </div>
                                   <div class="result sc_infobox"></div>
                                 </form>

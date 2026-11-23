@@ -288,6 +288,7 @@ p {
 }
 input[type="text"],
 input[type="tel"],
+input[type="date"],
 input[type="number"],
 input[type="email"],
 input[type="search"],
@@ -300,6 +301,7 @@ textarea {
 }
 .scheme_original input[type="text"],
 .scheme_original input[type="tel"],
+.scheme_original input[type="date"],
 .scheme_original input[type="number"],
 .scheme_original input[type="email"],
 .scheme_original input[type="search"],
@@ -310,6 +312,7 @@ textarea {
 }
 .scheme_original input[type="text"],
 .scheme_original input[type="tel"],
+.scheme_original input[type="date"],
 .scheme_original input[type="number"],
 .scheme_original input[type="email"],
 .scheme_original input[type="search"],
@@ -320,6 +323,7 @@ textarea {
 }
 .scheme_original input[type="text"],
 .scheme_original input[type="tel"],
+.scheme_original input[type="date"],
 .scheme_original input[type="number"],
 .scheme_original input[type="email"],
 .scheme_original input[type="search"],
@@ -330,6 +334,7 @@ textarea {
 }
 .scheme_original input[type="text"]:hover,
 .scheme_original input[type="tel"]:hover,
+.scheme_original input[type="date"]:hover,
 .scheme_original input[type="number"]:hover,
 .scheme_original input[type="email"]:hover,
 .scheme_original input[type="search"]:hover,
@@ -340,6 +345,7 @@ textarea {
 }
 .scheme_original input[type="text"]:hover,
 .scheme_original input[type="tel"]:hover,
+.scheme_original input[type="date"]:hover,
 .scheme_original input[type="number"]:hover,
 .scheme_original input[type="email"]:hover,
 .scheme_original input[type="search"]:hover,
@@ -351,6 +357,7 @@ textarea {
 .scheme_original input[type="text"]:focus,
 .scheme_original input[type="number"]:focus,
 .scheme_original input[type="tel"]:focus,
+.scheme_original input[type="date"]:focus,
 .scheme_original input[type="email"]:focus,
 .scheme_original input[type="search"]:focus,
 .scheme_original input[type="password"]:focus,
@@ -361,6 +368,7 @@ textarea {
 .scheme_original input[type="text"]:focus,
 .scheme_original input[type="number"]:focus,
 .scheme_original input[type="tel"]:focus,
+.scheme_original input[type="date"]:focus,
 .scheme_original input[type="email"]:focus,
 .scheme_original input[type="search"]:focus,
 .scheme_original input[type="password"]:focus,

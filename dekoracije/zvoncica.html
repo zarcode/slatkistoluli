@@ -115,7 +115,7 @@
 
                     <span class="contact_us">Kontakt</span>
                     <span class="contact_label contact_phone"
-                      >064/537-90-81</span
+                      ><a href="tel:+381645379081">064/537-90-81</a></span
                     >
                   </div>
 
@@ -187,7 +187,7 @@
                       </ul> -->
                     </li>
                     <li class="menu-item">
-                      <a href="../contacts.html"><span>O nama</span></a>
+                      <a href="../onama.html"><span>O nama</span></a>
                     </li>
                   </ul>
                 </nav>
@@ -357,7 +357,7 @@
                     </ul>
                   </li>
                   <li class="menu-item">
-                    <a href="../contacts.html"><span>Contacts</span></a>
+                    <a href="../onama.html"><span>Contacts</span></a>
                   </li>
                 </ul>
               </nav>
@@ -366,7 +366,7 @@
               <div class="contact_field contact_phone">
                 <span class="contact_icon icon-phone"></span>
                 <a href="tel:+381645379081" style="color: white">
-                  <span class="contact_label contact_phone">064/537-90-81</span>
+                  <span class="contact_label contact_phone"><a href="tel:+381645379081">064/537-90-81</a></span>
                 </a>
                 <span class="contact_icon icon-mail"></span>
                 <span class="contact_label contact_email"
@@ -446,26 +446,6 @@
                               <div
                                 class="woocommerce post_content m_wrapper aligncenter"
                               >
-                                <div itemprop="offers" class="margin_bottom_large">
-                                  <p class="price product-price-large">
-                                    <span class="woocommerce-Price-amount amount"
-                                      ><span
-                                        class="woocommerce-Price-currencySymbol"
-                                        >&#36;</span
-                                      >112.00</span
-                                    >
-                                  </p>
-                                </div>
-                                <div itemprop="description" class="product-description">
-                                  <p>
-                                    Lorem ipsum dolor sit amet consectetur,
-                                    adipisicing elit. Nihil explicabo porro
-                                    voluptatibus amet recusandae repellendus
-                                    inventore necessitatibus laudantium. Tenetur
-                                    autem explicabo rem repellendus maiores sed
-                                    distinctio corporis dolore officiis ad?
-                                  </p>
-                                </div>
                               </div>
                             </div>
                           </div>
@@ -521,6 +501,42 @@
                                         name="email"
                                         placeholder="E-mail *"
                                         aria-required="true"
+                                      />
+                                    </div>
+                                    <div
+                                      class="sc_form_item sc_form_field label_over column-1_1"
+                                    >
+                                      <input
+                                        id="sc_form_phone"
+                                        type="tel"
+                                        name="phone"
+                                        placeholder="Broj telefona *"
+                                        aria-required="true"
+                                      />
+                                    </div>
+                                    <div
+                                      class="sc_form_item sc_form_field label_over column-1_2"
+                                    >
+                                      <input
+                                        id="sc_form_location"
+                                        type="text"
+                                        name="location"
+                                        placeholder="Mesto održavanja *"
+                                        aria-required="true"
+                                      />
+                                    </div>
+                                    <div
+                                      class="sc_form_item sc_form_field label_over column-1_2"
+                                    >
+                                      <input
+                                        id="sc_form_date"
+                                        type="text"
+                                        name="event_date"
+                                        placeholder="Datum proslave *"
+                                        aria-required="true"
+                                        autocomplete="off"
+                                        onfocus="this.type='date';this.min=new Date().toISOString().slice(0,10);"
+                                        onblur="if(!this.value)this.type='text';"
                                       />
                                     </div>
                                     <div
@@ -666,6 +682,9 @@
           var result = form.find('.result');
           var username = form.find('[name="username"]').val().trim();
           var email = form.find('[name="email"]').val().trim();
+          var phone = form.find('[name="phone"]').val().trim();
+          var location = form.find('[name="location"]').val().trim();
+          var eventDate = form.find('[name="event_date"]').val().trim();
           var message = form.find('[name="message"]').val().trim();
           var productName = form.find('[name="product_name"]').val().trim();
           
@@ -693,6 +712,24 @@
             }
           }
           
+          if (!phone) {
+            errors.push('Broj telefona je obavezan');
+            form.find('[name="phone"]').addClass('error_fields_class');
+          } else if (!/^\+?[\d\s\/().-]{6,}$/.test(phone)) {
+            errors.push('Broj telefona nije validan');
+            form.find('[name="phone"]').addClass('error_fields_class');
+          }
+          
+          if (!location) {
+            errors.push('Mesto održavanja je obavezno');
+            form.find('[name="location"]').addClass('error_fields_class');
+          }
+          
+          if (!eventDate) {
+            errors.push('Datum proslave je obavezan');
+            form.find('[name="event_date"]').addClass('error_fields_class');
+          }
+          
           if (!message || message.length < 1) {
             errors.push('Poruka je obavezna');
             form.find('[name="message"]').addClass('error_fields_class');
@@ -713,11 +750,11 @@
           
           // Send email using Web3Forms (free, no signup required)
           // Your access key (set when you created it on web3forms.com)
-          var accessKey = '4d153229-7b9a-450d-9bfa-3fb3294c723f';
+          var accessKey = '04440260-606a-4945-b3bd-0cb89a5126e7';
           
           // Set your recipient email address here
           // Note: You can also set this when creating the access key on web3forms.com
-          var recipientEmail = 'denciczarko@gmail.com'; // CHANGE THIS TO YOUR EMAIL
+          var recipientEmail = 'slatkistoluli@gmail.com';
           
   
           // Send via Web3Forms API
@@ -732,6 +769,9 @@
               subject: 'Upit za proizvod: ' + productName,
               name: username,
               email: email,
+              phone: phone,
+              mesto_odrzavanja: location,
+              datum_proslave: eventDate,
               message: message,
               from_name: username,
               product_name: productName,  // Product name from hidden field
